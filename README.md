@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="420" height="320" src="figures/dis-log-official.png">
+  <img width="420" height="320" src="figures/dis-logo-official.png">
 </p>
 
 This is the official repo for our new project (2022): 
