@@ -19,7 +19,7 @@ This is the official repo for our new project (2022, come soon):
 title={Highly Accurate Dichotomous Image Segmentation},
 author={Xuebin Qin and Hang Dai and Xiaobin Hu and Deng-Ping Fan and Ling Shao and Luc Van Gool},
 year={2022},
-eprint={xxxx},
+eprint={xxxxx},
 archivePrefix={arXiv},
 primaryClass={cs.CV}
 }
