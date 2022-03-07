@@ -23,3 +23,10 @@ eprint={xxxx},
 archivePrefix={arXiv},
 primaryClass={cs.CV}
 }
+
+@article{qin2021boundary,
+  title={Boundary-aware segmentation network for mobile and web applications},
+  author={Qin, Xuebin and Fan, Deng-Ping and Huang, Chenyang and Diagne, Cyril and Zhang, Zichen and Sant'Anna, Adri{\`a} Cabeza and Suarez, Albert and Jagersand, Martin and Shao, Ling},
+  journal={arXiv preprint arXiv:2101.04704},
+  year={2021}
+}
