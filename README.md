@@ -2,7 +2,7 @@
   <img width="420" height="320" src="figures/dis-logo-official.png">
 </p>
 
-## [Highly Accurate Dichotomous Image Segmentation.(Arxiv)](https://arxiv.org/pdf/2203.03041.pdf) 
+## [Highly Accurate Dichotomous Image Segmentation](https://arxiv.org/pdf/2203.03041.pdf) 
 [Xuebin Qin](https://xuebinqin.github.io/), [Hang Dai](https://scholar.google.co.uk/citations?user=6yvjpQQAAAAJ&hl=en), [Xiaobin Hu](https://scholar.google.de/citations?user=3lMuodUAAAAJ&hl=en), [Deng-Ping Fan*](https://dengpingfan.github.io/), [Ling Shao](https://scholar.google.com/citations?user=z84rLjoAAAAJ&hl=en) and [Luc Van Gool](https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en).
 
 This is the official repo for our new project (2022, come soon): 
