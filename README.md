@@ -26,7 +26,9 @@ This is the official repo for our new project (2022, coming soon):
       booktitle={ECCV},
       year={2022}
 }
-
+```
+## Our Previous Works
+```
 @InProceedings{Qin_2020_PR,
       title = {U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection},
       author = {Qin, Xuebin and Zhang, Zichen and Huang, Chenyang and Dehghan, Masood and Zaiane, Osmar and Jagersand, Martin},
