@@ -6,8 +6,12 @@
 [Xuebin Qin](https://xuebinqin.github.io/), [Hang Dai](https://scholar.google.co.uk/citations?user=6yvjpQQAAAAJ&hl=en), [Xiaobin Hu](https://scholar.google.de/citations?user=3lMuodUAAAAJ&hl=en), [Deng-Ping Fan*](https://dengpingfan.github.io/), [Ling Shao](https://scholar.google.com/citations?user=z84rLjoAAAAJ&hl=en) and [Luc Van Gool](https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en).
 
 
-This is the official repo for our new project (2022, coming soon): 
+This is the official repo for our new project DIS: 
 [**[Project Page]**](https://xuebinqin.github.io/dis/index.html)
+
+## Updates !!!
+
+** (2022-Jul.-5)** Our DIS work is now accepted by ECCV 2022, the code and dataset will be publicly avaialbe no later than July 17th, 2022. Please be aware of our updates. 
 
 ## DEMO
 ![ship-demo](figures/ship-demo.gif)
