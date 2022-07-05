@@ -37,10 +37,10 @@ This is the official repo for our new project (2022, coming soon):
 }
 
 @article{qin2021boundary,
-         title={Boundary-aware segmentation network for mobile and web applications},
-         author={Qin, Xuebin and Fan, Deng-Ping and Huang, Chenyang and Diagne, Cyril and Zhang, Zichen and Sant'Anna, Adri{\`a} Cabeza and Suarez, Albert and Jagersand, Martin and Shao, Ling},
-         journal={arXiv preprint arXiv:2101.04704},
-         year={2021}
+       title={Boundary-aware segmentation network for mobile and web applications},
+       author={Qin, Xuebin and Fan, Deng-Ping and Huang, Chenyang and Diagne, Cyril and Zhang, Zichen and Sant'Anna, Adri{\`a} Cabeza and Suarez, Albert and Jagersand, Martin and Shao, Ling},
+       journal={arXiv preprint arXiv:2101.04704},
+       year={2021}
 }
 
 @InProceedings{Qin_2019_CVPR,
