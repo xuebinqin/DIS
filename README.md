@@ -28,12 +28,12 @@ This is the official repo for our new project (2022, coming soon):
 }
 
 @InProceedings{Qin_2020_PR,
-title = {U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection},
-author = {Qin, Xuebin and Zhang, Zichen and Huang, Chenyang and Dehghan, Masood and Zaiane, Osmar and Jagersand, Martin},
-journal = {Pattern Recognition},
-volume = {106},
-pages = {107404},
-year = {2020}
+      title = {U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection},
+      author = {Qin, Xuebin and Zhang, Zichen and Huang, Chenyang and Dehghan, Masood and Zaiane, Osmar and Jagersand, Martin},
+      journal = {Pattern Recognition},
+      volume = {106},
+      pages = {107404},
+      year = {2020}
 }
 
 @article{qin2021boundary,
@@ -44,9 +44,9 @@ year = {2020}
 }
 
 @InProceedings{Qin_2019_CVPR,
-author = {Qin, Xuebin and Zhang, Zichen and Huang, Chenyang and Gao, Chao and Dehghan, Masood and Jagersand, Martin},
-title = {BASNet: Boundary-Aware Salient Object Detection},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2019}
+        author = {Qin, Xuebin and Zhang, Zichen and Huang, Chenyang and Gao, Chao and Dehghan, Masood and Jagersand, Martin},
+        title = {BASNet: Boundary-Aware Salient Object Detection},
+        booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+        month = {June},
+        year = {2019}
 }
