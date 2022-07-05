@@ -11,7 +11,7 @@ This is the official repo for our new project DIS:
 
 ## Updates !!!
 
-** (2022-Jul.-5)** Our DIS work is now accepted by ECCV 2022, the code and dataset will be publicly avaialbe no later than July 17th, 2022. Please be aware of our updates. 
+** (2022-Jul.-5)** Our DIS work is now accepted by ECCV 2022, the code and dataset will be released before July 17th, 2022. Please be aware of our updates. 
 
 ## DEMO
 ![ship-demo](figures/ship-demo.gif)
