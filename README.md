@@ -20,10 +20,10 @@ This is the official repo for our new project (2022, coming soon):
 
 ## Citation
 ```
-@misc{qin2022,
-      title={Highly Accurate Dichotomous Image Segmentation},
+@InProceedings{qin2022,
       author={Xuebin Qin and Hang Dai and Xiaobin Hu and Deng-Ping Fan and Ling Shao and Luc Van Gool},
-      journal={ECCV},
+      title={Highly Accurate Dichotomous Image Segmentation},
+      booktitle={ECCV},
       year={2022}
 }
 
