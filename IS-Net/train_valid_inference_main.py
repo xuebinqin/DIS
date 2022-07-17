@@ -350,7 +350,7 @@ def train(net, optimizer, train_dataloaders, train_datasets, valid_dataloaders, 
             else:
                 # forward + backward + optimize
                 ds,_ = net(inputs_v)
-                loss2, loss = muti_loss_fusion(ds, labels_v)
+                loss2, loss = net.compute_loss(ds, labels_v)
 
             loss.backward()
             optimizer.step()
