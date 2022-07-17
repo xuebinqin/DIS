@@ -110,6 +110,7 @@ Or you can check the ```requirements.txt``` to configure the dependancies.
 ```
 python train_valid_inference_main.py
 ```
+
 <br>
 
 ### (4) Inference
