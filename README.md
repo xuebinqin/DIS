@@ -25,7 +25,9 @@
 
 <br> 
 
-## 1. [Our DIS5K Dataset V1.0 (Version Alias: DIS5K Sailship)](https://xuebinqin.github.io/dis/index.html) 
+## 1. Our Dichotomous Image Segmentation (DIS) Dataset
+
+### 1.1 [DIS dataset V1.0: DIS5K](https://xuebinqin.github.io/dis/index.html) 
 
 <br>
 
@@ -34,6 +36,15 @@
 ![dis5k-dataset-v1-sailship](figures/DIS5k-dataset-v1-sailship.png)
 ![complexities-qual](figures/complexities-qual.jpeg)
 ![categories](figures/categories.jpeg)
+
+### 1.2 [DIS dataset V2.0](https://github.com/xuebinqin/DIS)
+
+<br>
+
+Although our DIS5K V1.0 includes samples from more than 200 categories, many categories, such as human, animals, cars and so on, in real world are not included. [So the current version (v1.0) of our dataset may limit the robustness of the trained models.]() To build the comprehensive and large-scale highly accurate dichotomous image segmentation dataset, we are building our DIS dataset V2.0. The V2.0 will be released soon. Please stay tuned.
+
+Samples from DIS dataset V2.0.
+![dis-v2](figures/dis-v2.jpg)
 
 <br> 
 

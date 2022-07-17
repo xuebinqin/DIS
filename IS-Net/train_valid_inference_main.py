@@ -709,9 +709,9 @@ if __name__ == "__main__":
     print("building model...")
     hypar["model"] = ISNetDIS() #U2NETFASTFEATURESUP()
     hypar["early_stop"] = 20 ## stop the training when no improvement in the past 20 validation periods, smaller numbers can be used here e.g., 5 or 10.
-    hypar["model_save_fre"] = 2000 ## valid and save model weights every 2000 iterations
+    hypar["model_save_fre"] = 20 ## valid and save model weights every 2000 iterations
 
-    hypar["batch_size_train"] = 8 ## batch size for training
+    hypar["batch_size_train"] = 2 ## batch size for training
     hypar["batch_size_valid"] = 1 ## batch size for validation and inferencing
     print("batch size: ", hypar["batch_size_train"])
 
