@@ -274,7 +274,7 @@ class GOSDatasetCache(Dataset):
 
 
             im_id = cached_dataset["im_name"][i]
-
+            print("im_path: ", im_path)
             im = im_reader(im_path)
             im, im_shp = im_preprocess(im,self.cache_size)
             im_cache_file = os.path.join(cache_folder,self.dataset["data_name"][i]+"_"+im_id + "_im.pt")
@@ -285,12 +285,14 @@ class GOSDatasetCache(Dataset):
                 ims_pt_list.append(torch.unsqueeze(im,0))
             # ims_list.append(im.cpu().data.numpy().astype(np.uint8))
 
-
-            gt = im_reader(self.dataset["gt_path"][i])
+            gt = np.zeros(im.shape[0:2])
+            if len(self.dataset["gt_path"])!=0:
+                gt = im_reader(self.dataset["gt_path"][i])
             gt, gt_shp = gt_preprocess(gt,self.cache_size)
             gt_cache_file = os.path.join(cache_folder,self.dataset["data_name"][i]+"_"+im_id + "_gt.pt")
             torch.save(gt,gt_cache_file)
-            cached_dataset["gt_path"][i] = gt_cache_file
+            # cached_dataset["gt_path"][i] = gt_cache_file
+            cached_dataset["gt_path"].append(gt_cache_file)
             if(self.cache_boost):
                 gts_pt_list.append(torch.unsqueeze(gt,0))
             # gts_list.append(gt.cpu().data.numpy().astype(np.uint8))
