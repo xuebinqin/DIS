@@ -4,30 +4,30 @@
 
 ![dis5k-v1-sailship](figures/dis5k-v1-sailship.jpeg)
 
-<br> 
+<br>
 
-## [Highly Accurate Dichotomous Image Segmentation （ECCV 2022）](https://arxiv.org/pdf/2203.03041.pdf) 
+## [Highly Accurate Dichotomous Image Segmentation （ECCV 2022）](https://arxiv.org/pdf/2203.03041.pdf)
 [Xuebin Qin](https://xuebinqin.github.io/), [Hang Dai](https://scholar.google.co.uk/citations?user=6yvjpQQAAAAJ&hl=en), [Xiaobin Hu](https://scholar.google.de/citations?user=3lMuodUAAAAJ&hl=en), [Deng-Ping Fan*](https://dengpingfan.github.io/), [Ling Shao](https://scholar.google.com/citations?user=z84rLjoAAAAJ&hl=en), [Luc Van Gool](https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en).
 
 <br>
 
-## This is the official repo for our newly formulated DIS task: 
+## This is the official repo for our newly formulated DIS task:
 [**Project Page**](https://xuebinqin.github.io/dis/index.html), [**Arxiv**](https://arxiv.org/pdf/2203.03041.pdf).
 
-<br> 
+<br>
 
 ## Updates !!!
 
 <br>
 
 ## ** (2022-Jul.-17)** Our paper, code and dataset are now officially released!!! Please check our project page for more details: [**Project Page**](https://xuebinqin.github.io/dis/index.html).<br>
-** (2022-Jul.-5)** Our DIS work is now accepted by ECCV 2022, the code and dataset will be released before July 17th, 2022. Please be aware of our updates. 
+** (2022-Jul.-5)** Our DIS work is now accepted by ECCV 2022, the code and dataset will be released before July 17th, 2022. Please be aware of our updates.
 
-<br> 
+<br>
 
 ## 1. Our Dichotomous Image Segmentation (DIS) Dataset
 
-### 1.1 [DIS dataset V1.0: DIS5K](https://xuebinqin.github.io/dis/index.html) 
+### 1.1 [DIS dataset V1.0: DIS5K](https://xuebinqin.github.io/dis/index.html)
 
 <br>
 
@@ -46,13 +46,16 @@ Although our DIS5K V1.0 includes samples from more than 200 categories, many cat
 Samples from DIS dataset V2.0.
 ![dis-v2](figures/dis-v2.jpg)
 
-<br> 
+<br>
 
 ## 2. APPLICATIONS of Our DIS5K Dataset
 
 <br>
 
-### 3D Modeling 
+### Yet another web app [Rembg.ai](https://rembg.ai) <br>
+![web app](figures/rembgai.png)
+
+### 3D Modeling
 ![3d-modeling](figures/3d-modeling.png)
 
 ### Image Editing
@@ -61,16 +64,16 @@ Samples from DIS dataset V2.0.
 ![bg-removal](figures/bg-removal.gif)
 ### Still Image Animation
 ![view-move](figures/view-move.gif)
-### AR 
+### AR
 ![motor-demo](figures/motor-demo.gif)
 ### 3D Rendering
 ![video-3d](figures/video-3d.gif)
 
-<br> 
+<br>
 
 ## 3. Architecture of Our IS-Net
 
-<br> 
+<br>
 
 ![is-net](figures/is-net.png)
 
@@ -105,19 +108,19 @@ Samples from DIS dataset V2.0.
 ### (1) Clone this repo
 ```
 git clone https://github.com/xuebinqin/DIS.git
-``` 
+```
 
-### (2) Configuring the environment: go to the root ```DIS``` folder and run 
+### (2) Configuring the environment: go to the root ```DIS``` folder and run
 ```
 conda env create -f pytorch18.yml
 ```
-Or you can check the ```requirements.txt``` to configure the dependancies. 
+Or you can check the ```requirements.txt``` to configure the dependancies.
 
 ### (3) Train:
 (a) Open ```train_valid_inference_main.py```, set the path of your to-be-inferenced ```train_datasets``` and ```valid_datasets```, e.g., ```valid_datasets=[dataset_vd]``` <br>
 (b) Set the ```hypar["mode"]``` to ```"train"``` <br>
 (c) Create a new folder ```your_model_weights``` in the directory ```saved_models``` and set it as the ```hypar["model_path"] ="../saved_models/your_model_weights"``` and make sure ```hypar["valid_out_dir"]```(line 668) is set to ```""```, otherwise the prediction maps of the validation stage will be saved to that directory, which will slow the training speed down <br>
-(d) Run 
+(d) Run
 ```
 python train_valid_inference_main.py
 ```
@@ -127,7 +130,7 @@ python train_valid_inference_main.py
 (b) Open ```train_valid_inference_main.py```, set the path of your to-be-inferenced ```valid_datasets```, e.g., ```valid_datasets=[dataset_te1, dataset_te2, dataset_te3, dataset_te4]``` <br>
 (c) Set the ```hypar["mode"]``` to ```"valid"``` <br>
 (d) Set the output directory of your predicted maps, e.g., ```hypar["valid_out_dir"] = "../DIS5K-Results-test"``` <br>
-(e) Run 
+(e) Run
 ```
 python train_valid_inference_main.py
 ```
@@ -142,11 +145,11 @@ Our code and evaluation metric use Apache License 2.0. The Terms of use for our 
 
 <br>
 
-## Acknowledgements 
+## Acknowledgements
 
 <br>
 
-We would like to thank Dr. [Ibrahim Almakky](https://scholar.google.co.uk/citations?user=T9MTcK0AAAAJ&hl=en) for his helps in implementing the dataloader cache machanism of loading large-size training samples and Jiayi Zhu for his efforts in re-organizing our code and dataset. 
+We would like to thank Dr. [Ibrahim Almakky](https://scholar.google.co.uk/citations?user=T9MTcK0AAAAJ&hl=en) for his helps in implementing the dataloader cache machanism of loading large-size training samples and Jiayi Zhu for his efforts in re-organizing our code and dataset.
 
 <br>
 
