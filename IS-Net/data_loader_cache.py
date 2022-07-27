@@ -76,7 +76,7 @@ def create_dataloaders(name_im_gt_list, cache_size=[], cache_boost=True, my_tran
 
     gos_dataloaders = []
     gos_datasets = []
-    # if(mode=="train"):
+
     if(len(name_im_gt_list)==0):
         return gos_dataloaders, gos_datasets
 
