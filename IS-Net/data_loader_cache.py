@@ -291,8 +291,8 @@ class GOSDatasetCache(Dataset):
             gt, gt_shp = gt_preprocess(gt,self.cache_size)
             gt_cache_file = os.path.join(cache_folder,self.dataset["data_name"][i]+"_"+im_id + "_gt.pt")
             torch.save(gt,gt_cache_file)
-            # cached_dataset["gt_path"][i] = gt_cache_file
-            cached_dataset["gt_path"].append(gt_cache_file)
+            cached_dataset["gt_path"][i] = gt_cache_file
+            #cached_dataset["gt_path"].append(gt_cache_file)
             if(self.cache_boost):
                 gts_pt_list.append(torch.unsqueeze(gt,0))
             # gts_list.append(gt.cpu().data.numpy().astype(np.uint8))
