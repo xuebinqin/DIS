@@ -200,6 +200,8 @@ def valid_gt_encoder(net, valid_dataloaders, valid_datasets, hypar, epoch=0):
         MAE = np.zeros((val_num))
 
         val_cnt = 0.0
+        i_val = None
+
         for i_val, data_val in enumerate(valid_dataloader):
 
             # imidx_val, inputs_val, labels_val, shapes_val = data_val['imidx'], data_val['image'], data_val['label'], data_val['shape']
