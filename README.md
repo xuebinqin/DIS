@@ -18,7 +18,7 @@
 
 # Web Demo
 
-Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/doevent/dis-background-removal)
+Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/doevent/dis-background-removal) Notes: This model weights is the academic version which trained with DIS V1.0, which includes no animal, human, cars, etc. So it may not work well on these targets. We will release another version for general use and test. In addition, our DIS V2.0 will cover more categories with extremely well-annotated samples. Please stay tuned. 
 
 ## Updates !!!
 
