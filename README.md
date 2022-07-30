@@ -16,7 +16,7 @@
 
 <br> 
 
-# PLEASE STAY TUNED FOR OUR DIS V2.0 
+# (Jul. 30th, 2022) PLEASE STAY TUNED FOR OUR DIS V2.0 
 ![disv2-peacock](figures/peacock.jpg)
 
 # Updates !!!
