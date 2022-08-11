@@ -14,6 +14,8 @@ from data_loader_cache import get_im_gt_name_dict, create_dataloaders, GOSRandom
 from basics import  f1_mae_torch #normPRED, GOSPRF1ScoresCache,f1score_torch,
 from models import *
 
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 def get_gt_encoder(train_dataloaders, train_datasets, valid_dataloaders, valid_datasets, hypar, train_dataloaders_val, train_datasets_val): #model_path, model_save_fre, max_ite=1000000):
 
     # train_dataloaders, train_datasets = create_dataloaders(train_nm_im_gt_list,
@@ -198,6 +200,8 @@ def valid_gt_encoder(net, valid_dataloaders, valid_datasets, hypar, epoch=0):
         MAE = np.zeros((val_num))
 
         val_cnt = 0.0
+        i_val = None
+
         for i_val, data_val in enumerate(valid_dataloader):
 
             # imidx_val, inputs_val, labels_val, shapes_val = data_val['imidx'], data_val['image'], data_val['label'], data_val['shape']
@@ -240,7 +244,7 @@ def valid_gt_encoder(net, valid_dataloaders, valid_datasets, hypar, epoch=0):
 
                 gt = np.squeeze(io.imread(valid_dataset.dataset["ori_gt_path"][i_test])) # max = 255
                 with torch.no_grad():
-                    gt = torch.tensor(gt).cuda()
+                    gt = torch.tensor(gt).to(device)
 
                 pre,rec,f1,mae = f1_mae_torch(pred_val*255, gt, valid_dataset, i_test, mybins, hypar)
 
@@ -479,7 +483,7 @@ def valid(net, valid_dataloaders, valid_datasets, hypar, epoch=0):
                 else:
                     gt = np.zeros((shapes_val[t][0],shapes_val[t][1]))
                 with torch.no_grad():
-                    gt = torch.tensor(gt).cuda()
+                    gt = torch.tensor(gt).to(device)
 
                 pre,rec,f1,mae = f1_mae_torch(pred_val*255, gt, valid_dataset, i_test, mybins, hypar)
 
