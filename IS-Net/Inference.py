@@ -28,7 +28,7 @@ if __name__ == "__main__":
         net=net.cuda()
     else:
         net.load_state_dict(torch.load(model_path,map_location="cpu"))
-
+    net.eval()
     im_list = glob(dataset_path+"/*.jpg")
     for i, im_path in tqdm(enumerate(im_list), total=len(im_list)):
         print("im_path: ", im_path)
@@ -37,11 +37,12 @@ if __name__ == "__main__":
             im = im[:, :, np.newaxis]
         im_shp=im.shape[0:2]
         im_tensor = torch.tensor(im, dtype=torch.float32).permute(2,0,1)
-        im_tensor = F.upsample(torch.unsqueeze(im_tensor,0), input_size, mode="bilinear")
-        image = normalize(im_tensor,[0.5,0.5,0.5],[1.0,1.0,1.0]).type(torch.uint8)
+        im_tensor = F.upsample(torch.unsqueeze(im_tensor,0), input_size, mode="bilinear").type(torch.uint8)
+        image = torch.divide(im_tensor,255.0)
+        image = normalize(image,[0.5,0.5,0.5],[1.0,1.0,1.0])
+
         if torch.cuda.is_available():
             image=image.cuda()
-        image = torch.divide(image,255.0)
         result=net(image)
         result=torch.squeeze(F.upsample(result[0][0],im_shp,mode='bilinear'),0)
         ma = torch.max(result)
