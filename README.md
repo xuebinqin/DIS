@@ -113,13 +113,18 @@ Samples from DIS dataset V2.0.
 git clone https://github.com/xuebinqin/DIS.git
 ``` 
 
-### (2) Configuring the environment: go to the root ```DIS``` folder and run 
+### (2) Configuring the environment: go to the ```DIS/ISNet``` folder and run 
 ```
 conda env create -f pytorch18.yml
 ```
 Or you can check the ```requirements.txt``` to configure the dependancies. 
 
-### (3) Train:
+### (3) activate the conda environment by 
+```
+conda activate pytorch18
+``` 
+
+### (4) Train:
 (a) Open ```train_valid_inference_main.py```, set the path of your to-be-inferenced ```train_datasets``` and ```valid_datasets```, e.g., ```valid_datasets=[dataset_vd]``` <br>
 (b) Set the ```hypar["mode"]``` to ```"train"``` <br>
 (c) Create a new folder ```your_model_weights``` in the directory ```saved_models``` and set it as the ```hypar["model_path"] ="../saved_models/your_model_weights"``` and make sure ```hypar["valid_out_dir"]```(line 668) is set to ```""```, otherwise the prediction maps of the validation stage will be saved to that directory, which will slow the training speed down <br>
@@ -128,12 +133,23 @@ Or you can check the ```requirements.txt``` to configure the dependancies.
 python train_valid_inference_main.py
 ```
 
-### (4) Inference
-(a). Download the pre-trained weights (for fair academic comparisons only, the optimized model for engineering or common use will be released soon) ```isnet.pth``` from [(Google Drive)](https://drive.google.com/file/d/1KyMpRjewZdyYfxHPYcd-ZbanIXtin0Sn/view?usp=sharing) or [(Baidu Pan 提取码：xbfk)](https://pan.baidu.com/s/1-X2WutiBkWPt-oakuvZ10w?pwd=xbfk) and store ```isnet.pth``` in ```saved_models/IS-Net``` <br>
-(b) Open ```train_valid_inference_main.py```, set the path of your to-be-inferenced ```valid_datasets```, e.g., ```valid_datasets=[dataset_te1, dataset_te2, dataset_te3, dataset_te4]``` <br>
-(c) Set the ```hypar["mode"]``` to ```"valid"``` <br>
-(d) Set the output directory of your predicted maps, e.g., ```hypar["valid_out_dir"] = "../DIS5K-Results-test"``` <br>
-(e) Run 
+### (5) Inference
+
+Download the pre-trained weights (for fair academic comparisons only, the optimized model for engineering or common use will be released soon) ```isnet.pth``` from [(Google Drive)](https://drive.google.com/file/d/1KyMpRjewZdyYfxHPYcd-ZbanIXtin0Sn/view?usp=sharing) or [(Baidu Pan 提取码：xbfk)](https://pan.baidu.com/s/1-X2WutiBkWPt-oakuvZ10w?pwd=xbfk) and store ```isnet.pth``` in ```saved_models/IS-Net``` <br>
+
+## I. Simple inference code for your own dataset without ground truth:
+(a) Open ```\ISNet\inference.py``` and configure your input and output directories
+(b) Run 
+```
+python inference.py
+```
+
+## II. Inference for dataset with/without ground truth
+
+(a) Open ```train_valid_inference_main.py```, set the path of your to-be-inferenced ```valid_datasets```, e.g., ```valid_datasets=[dataset_te1, dataset_te2, dataset_te3, dataset_te4]``` <br>
+(b) Set the ```hypar["mode"]``` to ```"valid"``` <br>
+(c) Set the output directory of your predicted maps, e.g., ```hypar["valid_out_dir"] = "../DIS5K-Results-test"``` <br>
+(d) Run 
 ```
 python train_valid_inference_main.py
 ```
