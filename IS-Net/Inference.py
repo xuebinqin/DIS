@@ -17,9 +17,9 @@ from models import *
 
 
 if __name__ == "__main__":
-    dataset_path="/home/jiayi.zhu/DIS_projects/demo"  #Your dataset path
-    model_path="/home/jiayi.zhu/DIS_projects/saved_models/IS-Net-New/gpu_itr_654000_traLoss_0.1955_traTarLoss_0.0186_valLoss_0.9414_valTarLoss_0.1418_maxF1_0.9117_mae_0.0388_time_0.030502.pth"  #Your model path
-    result_path="/home/jiayi.zhu/DIS_projects/demo_result"  #The folder path that you want to save the results
+    dataset_path="../datasets/demo_dataset"  #Your dataset path
+    model_path="../saved_models/isnet.pth"  #Your model path
+    result_path="../datasets/demo_result"  #The folder path that you want to save the results
     input_size=[1024,1024]
     net=ISNetDIS()
 
