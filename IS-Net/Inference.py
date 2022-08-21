@@ -17,9 +17,9 @@ from models import *
 
 
 if __name__ == "__main__":
-    dataset_path=""  #Your dataset path
-    model_path=""  #Your model path
-    result_path=""  #The folder path that you want to save the results
+    dataset_path="/home/jiayi.zhu/DIS_projects/demo"  #Your dataset path
+    model_path="/home/jiayi.zhu/DIS_projects/saved_models/IS-Net-New/gpu_itr_654000_traLoss_0.1955_traTarLoss_0.0186_valLoss_0.9414_valTarLoss_0.1418_maxF1_0.9117_mae_0.0388_time_0.030502.pth"  #Your model path
+    result_path="/home/jiayi.zhu/DIS_projects/demo_result"  #The folder path that you want to save the results
     input_size=[1024,1024]
     net=ISNetDIS()
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     else:
         net.load_state_dict(torch.load(model_path,map_location="cpu"))
     net.eval()
-    im_list = glob(dataset_path+"/*.jpg")
+    im_list = glob(dataset_path+"/*.jpg")+glob(dataset_path+"/*.JPG")+glob(dataset_path+"/*.jpeg")+glob(dataset_path+"/*.JPEG")+glob(dataset_path+"/*.png")+glob(dataset_path+"/*.PNG")+glob(dataset_path+"/*.bmp")+glob(dataset_path+"/*.BMP")+glob(dataset_path+"/*.tiff")+glob(dataset_path+"/*.TIFF")
     for i, im_path in tqdm(enumerate(im_list), total=len(im_list)):
         print("im_path: ", im_path)
         im = io.imread(im_path)
