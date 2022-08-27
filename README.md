@@ -171,7 +171,7 @@ Our code and evaluation metric use Apache License 2.0. The Terms of use for our 
 
 <br>
 
-We would like to thank Dr. [Ibrahim Almakky](https://scholar.google.co.uk/citations?user=T9MTcK0AAAAJ&hl=en) for his helps in implementing the dataloader cache machanism of loading large-size training samples and Jiayi Zhu for his efforts in re-organizing our code and dataset. 
+We would like to thank Dr. [Ibrahim Almakky](https://scholar.google.co.uk/citations?user=T9MTcK0AAAAJ&hl=en) for his helps in implementing the dataloader cache mechanism of loading large-size training samples and Jiayi Zhu for his efforts in re-organizing our code and dataset. 
 
 <br>
 
