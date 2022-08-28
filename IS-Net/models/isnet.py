@@ -430,10 +430,6 @@ class ISNetGTEncoder(nn.Module):
         self.side5 = nn.Conv2d(512,out_ch,3,padding=1)
         self.side6 = nn.Conv2d(512,out_ch,3,padding=1)
 
-    def compute_loss_max(self, preds, targets, fs):
-
-        return muti_loss_fusion_max(preds, targets,fs)
-
     def compute_loss(self, preds, targets):
 
         return muti_loss_fusion(preds,targets)
