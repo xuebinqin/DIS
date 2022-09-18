@@ -493,9 +493,9 @@ def valid(net, valid_dataloaders, valid_datasets, hypar, epoch=0):
                 F1[i_test,:] = f1
                 MAE[i_test] = mae
 
-                del ds_val, gt
-                gc.collect()
-                torch.cuda.empty_cache()
+            del ds_val, gt
+            gc.collect()
+            torch.cuda.empty_cache()
 
             # if(loss_val.data[0]>1):
             val_loss += loss_val.item()#data[0]
