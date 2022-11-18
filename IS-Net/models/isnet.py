@@ -544,7 +544,7 @@ class ISNetDIS(nn.Module):
         hx = x
 
         hxin = self.conv_in(hx)
-        hx = self.pool_in(hxin)
+        #hx = self.pool_in(hxin)
 
         #stage 1
         hx1 = self.stage1(hxin)
