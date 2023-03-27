@@ -17,9 +17,11 @@ from models import *
 
 
 if __name__ == "__main__":
-    dataset_path="../demo_datasets/your_dataset"  #Your dataset path
-    model_path="../saved_models/IS-Net/isnet-general-use.pth"  # the model path
-    result_path="../demo_datasets/your_dataset_result"  #The folder path that you want to save the results
+    root_path=os.path.abspath(__file__)
+    root_path=os.path.dirname(os.path.dirname(root_path))
+    dataset_path=os.path.join(root_path, "demo_datasets", "your_dataset")                  # Your dataset path
+    model_path=os.path.join(root_path, "saved_models", "IS-Net", "isnet-general-use.pth")  # the model path
+    result_path=os.path.join(root_path, "demo_datasets", "your_dataset_result")            # The folder path that you want to save the results
     input_size=[1024,1024]
     net=ISNetDIS()
 
