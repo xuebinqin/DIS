@@ -16,7 +16,11 @@
 
 <br> 
 
-# THE DIS V2.0 has been delayed (Currently, only a few sample images of our DIS V2.0 dataset are included in this repo. The complete DIS V2.0 dataset and model HAVEN'T been released yet)! We are trying our best to release that as early as possible!
+# THE DIS V2.0 has been delayed ! 
+
+# Currently, only a few sample images of our DIS V2.0 dataset are included in this repo. The complete DIS V2.0 dataset and model have NOT been released yet! 
+
+# We are trying our best to release that as early as possible!
 ![disv2-peacock](figures/peacock.jpg)
 
 # Updates !!!
