@@ -165,7 +165,7 @@ Set the ground truth directory ```gt_root``` and the prediction directory ```pre
 <br>
 
 ## 7. Term of Use
-Our code and evaluation metric use Apache License 2.0. The Terms of use for our DIS5K dataset is provided as [DIS5K-Dataset-Terms-of-Use.pdf](DIS5K-Dataset-Terms-of-Use.pdf). Currently, we will not restrict this dataset (DIS5K V1.0) from commercial usage (free of charge for the current version). But the commercial users need to sign another terms of use by contacting us via email.  
+Our code and evaluation metric use Apache License 2.0. The Terms of use for our DIS5K dataset is provided as [DIS5K-Dataset-Terms-of-Use.pdf](DIS5K-Dataset-Terms-of-Use.pdf).   
 
 <br>
 
