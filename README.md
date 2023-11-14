@@ -99,7 +99,7 @@ Samples from DIS dataset V2.0.
 
 <br>
 
-### Predicted Maps, [(Google Drive)](https://drive.google.com/file/d/1FMtDLFrL6xVc41eKlLnuZWMBAErnKv0Y/view?usp=sharing), [(Baidu Pan 提取码：ph1d)](https://pan.baidu.com/s/1WUk2RYYpii2xzrvLna9Fsg?pwd=ph1d), of Our IS-Net and Other SOTAs
+### Predicted Maps, [(Google Drive)](https://drive.google.com/file/d/1PoI4R-thDYhAjqOaCwyXqvAaZFEJxWnT/view?usp=sharing), [(Baidu Pan 提取码：ph1d)](https://pan.baidu.com/s/1WUk2RYYpii2xzrvLna9Fsg?pwd=ph1d), of Our IS-Net and Other SOTAs
 
 ### Qualitative Comparisons Against SOTAs
 ![qual-comp](figures/qual-comp.jpg)
