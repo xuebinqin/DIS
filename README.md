@@ -34,7 +34,7 @@ conda env create -f environment_cu118.yaml
 2. Find the conda environment directory
 ```
 conda info --envs
-``
+```
 3. Enter into the conda environment directory
 ```
 cd /path/to/file/envs/
