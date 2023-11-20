@@ -1,8 +1,6 @@
 # DIS-A100-4090
 
-## Updated the environment from CUDA 10.2 to CUDA 11.8 !
-Adapt to **4090** and **A100** ！
-
+## Updated the environment from CUDA 10.2 to CUDA 11.8 ! Adapt to **4090** and **A100** ！
 Using this environment, ISNet can run on GPUs with Ampere architecture and earlier, such as the 30 series cards, 40 series cards, A100, A10, etc. Except for the H100, which requires a CUDA 12+ environment, CUDA 11.8 currently supports the vast majority of Nvidia graphics cards.
 
 ## CUDA 11.8 Environment Configuration
