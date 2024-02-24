@@ -14,7 +14,10 @@ from data_loader_cache import get_im_gt_name_dict, create_dataloaders, GOSRandom
 from basics import  f1_mae_torch #normPRED, GOSPRF1ScoresCache,f1score_torch,
 from models import *
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# Check if MPS (Apple GPU) support is available, then use it, else use CPU
+device = 'mps' if torch.backends.mps.is_available() else 'cpu'
+print(f"Using device: {device}")
+
 
 def get_gt_encoder(train_dataloaders, train_datasets, valid_dataloaders, valid_datasets, hypar, train_dataloaders_val, train_datasets_val): #model_path, model_save_fre, max_ite=1000000):
 
@@ -684,7 +687,7 @@ if __name__ == "__main__":
 
     if hypar["mode"] == "train":
         hypar["valid_out_dir"] = "" ## for "train" model leave it as "", for "valid"("inference") mode: set it according to your local directory
-        hypar["model_path"] ="../saved_models/IS-Net-test" ## model weights saving (or restoring) path
+        hypar["model_path"] ="../saved_models/your_model_weights" ## model weights saving (or restoring) path
         hypar["restore_model"] = "" ## name of the segmentation model weights .pth for resume training process from last stop or for the inferencing
         hypar["start_ite"] = 0 ## start iteration for the training, can be changed to match the restored training process
         hypar["gt_encoder_model"] = ""

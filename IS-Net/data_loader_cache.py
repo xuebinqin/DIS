@@ -89,11 +89,16 @@ def create_dataloaders(name_im_gt_list, cache_size=[], cache_boost=True, my_tran
         num_workers_ = 8
 
     for i in range(0,len(name_im_gt_list)):
+
+
         gos_dataset = GOSDatasetCache([name_im_gt_list[i]],
                                       cache_size = cache_size,
                                       cache_path = name_im_gt_list[i]["cache_dir"],
                                       cache_boost = cache_boost,
                                       transform = transforms.Compose(my_transforms))
+        
+        print("len(gos_dataset): ", len(gos_dataset))
+
         gos_dataloaders.append(DataLoader(gos_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers_))
         gos_datasets.append(gos_dataset)
 
@@ -198,7 +203,6 @@ class GOSDatasetCache(Dataset):
 
     def __init__(self, name_im_gt_list, cache_size=[], cache_path='./cache', cache_file_name='dataset.json', cache_boost=False, transform=None):
 
-
         self.cache_size = cache_size
         self.cache_path = cache_path
         self.cache_file_name = cache_file_name
@@ -229,6 +233,9 @@ class GOSDatasetCache(Dataset):
         im_ext_list = [] # im ext
         gt_ext_list = [] # gt ext
         for i in range(0,len(name_im_gt_list)):
+
+            print("dataset: ", name_im_gt_list[i]["dataset_name"])
+
             dataset_names.append(name_im_gt_list[i]["dataset_name"])
             # dataset name repeated based on the number of images in this dataset
             dt_name_list.extend([name_im_gt_list[i]["dataset_name"] for x in name_im_gt_list[i]["im_path"]])
@@ -237,6 +244,15 @@ class GOSDatasetCache(Dataset):
             gt_path_list.extend(name_im_gt_list[i]["gt_path"])
             im_ext_list.extend([name_im_gt_list[i]["im_ext"] for x in name_im_gt_list[i]["im_path"]])
             gt_ext_list.extend([name_im_gt_list[i]["gt_ext"] for x in name_im_gt_list[i]["gt_path"]])
+
+        print("len(dataset_names): ", dataset_names)
+
+        print("len(im_path_list): ", len(im_path_list))
+        print("len(gt_path_list): ", len(gt_path_list))
+        print("len(im_name_list): ", len(im_name_list))
+        print("len(gt_ext_list): ", len(gt_ext_list))
+        print("len(im_ext_list): ", len(im_ext_list))
+        print("len(dt_name_list): ", len(dt_name_list))
 
 
         self.dataset["data_name"] = dt_name_list
@@ -255,6 +271,7 @@ class GOSDatasetCache(Dataset):
         self.dataset["gts_pt_dir"] = ""
 
         self.dataset = self.manage_cache(dataset_names)
+        print("len(self.dataset['im_path']): ", self.dataset)
 
     def manage_cache(self,dataset_names):
         if not os.path.exists(self.cache_path): # create the folder for cache
