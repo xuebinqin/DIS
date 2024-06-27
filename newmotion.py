@@ -12,7 +12,9 @@ from skimage.metrics import structural_similarity as ssim
 import logging 
 # Initialize video capture
 
-
+def maskSubtract(base_frame, current_frame):
+    sub = cv2.subtract(current_frame, base_frame)
+    return sub
 
 cap = cv2.VideoCapture(0)  # Change the index (0, 1, 2, etc.) based on your camera
 frameQueue = deque(maxlen=10)
@@ -164,9 +166,10 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 frameQueue.append(old_frame)
 emptyFill = False 
 initCheck = 0
+prev_mask = pil_mask
 while True:
     prev_status = current_status
-
+    
     prevmask = pil_mask
     runtimeCounter +=1
     ret, frame = cap.read()
@@ -195,8 +198,10 @@ while True:
     if reset_key_pressed or (prev_status == True and current_status == False):
         print("======================== Inside reset ==============================")
         s = time.time()
-        pil_mask = inference(frame)
+        current_mask = inference(frame)
         e = time.time()
+        pil_mask = maskSubtract(prev_mask, current_mask)
+
         print(f'{e-s} for inferencing one frame')
         polygon_coords, curr_area = masker.maskProcessor(pil_mask, 20)
         old_coords, prev_area = masker.maskProcessor(prevmask, 20)
