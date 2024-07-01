@@ -26,8 +26,6 @@ class maskImage:
         
         
     def maskProcessor(self,mask, tolerance = 20):
-        points = self.points
-        # mask = self.mask
         self.mask = mask
         if mask.any():
             
@@ -46,7 +44,7 @@ class maskImage:
 
 
             points = [shape for shape in points if (self.calculate_area(shape) / largest_area_value) * 100 >= 0.75]
-            self.points = points[0]
+            # self.points = points[0]
             return points
         else:
             raise Exception('>>> Mask not initiated <<<')
@@ -85,10 +83,11 @@ class maskImage:
     
     
         
-    def find_left_upper_right_down(self):
-        if self.points is None:
-            raise Exception('TypeError: Points list is None')
-        points = self.points
+    def find_left_upper_right_down(self, points):
+        # if self.points is None:
+        #     raise Exception('TypeError: Points list is None')
+        # points = self.points
+
         if not points:
             warnings.warn('>>> WARNING : list of points is empty. Please Check <<<')
             return None, None
@@ -96,10 +95,11 @@ class maskImage:
         left_upper = [min(points, key=lambda point: point[0])[0], min(points, key=lambda point: point[1])[1]]
         right_down = [max(points, key=lambda point: point[0])[0], max(points, key=lambda point: point[1])[1]]
         
-        self.left = left_upper
-        self.right = right_down
-        self.annotations = [self.left[0], self.left[1], self.right[0], self.right[1]]
-
+        # self.left = left_upper
+        # self.right = right_down
+        # self.annotations = [self.left[0], self.left[1], self.right[0], self.right[1]]
+        annotations = [left_upper[0], left_upper[1], right_down[0], right_down[1]]
+        return annotations
         
         
     def crop_image(self, image, mask, get_annotations = False, save_path = None):
@@ -118,17 +118,31 @@ class maskImage:
             else:
                 raise Exception('>>>>>>> Masked Image is NoneType <<<<<<<<<')
                 
-                
-    def get_image_annotations(self, image, mask):
-        if type(image) == str:
-            self.image = cv2.imread(image)
-        self.image = image 
+    
+    def get_xyxy(self, points_list):
+        if points_list is None:
+            vertices_list = self.points 
+        else:
+            vertices_list = points_list 
         
-        boolean_mask = mask>0.5
-        boolean_mask = boolean_mask.astype(np.uint8)
-        self.mask = boolean_mask
-        self.maskProcessor()
-        self.find_left_upper_right_down()
-        return self.annotations
+        bounding_boxes = []
+        for entry in vertices_list:
+            bounding_boxes.append(self.find_left_upper_right_down(entry))
+
+        return bounding_boxes
+        
+
+    # def get_image_annotations(self, image, mask):
+    #     if type(image) == str:
+    #         self.image = cv2.imread(image)
+    #     self.image = image 
+        
+    #     boolean_mask = mask>0.5
+    #     boolean_mask = boolean_mask.astype(np.uint8)
+    #     self.mask = boolean_mask
+    #     self.maskProcessor()
+    #     self.find_left_upper_right_down()
+    #     return self.annotations
+
         
         
