@@ -44,60 +44,43 @@ class maskImage:
 
 
             points = [shape for shape in points if (self.calculate_area(shape) / largest_area_value) * 100 >= 0.75]
-            # self.points = points[0]
+            self.points = points[0]
             return points
         else:
             raise Exception('>>> Mask not initiated <<<')
     
+    def resize_binary_mask(self, mask,size):
+        return cv2.resize(mask,size, cv2.INTER_LINEAR) 
     
-    def save_masked_image(self):
+    def maskedImage(self,image_rgb, mask, annotations = None):
+    
+        if annotations is None:
+            points = self.maskProcessor(mask, 20)
+            annotations = self.find_left_upper_right_down(points)
+            print(annotations)
         
-        if self.image is None:
-            raise Exception('>>>>> Image not initiated <<<<<<')
-            
-            
-        image_rgb = self.image
-        mask = self.mask
-        
-        mask = resize_binary_mask(mask, (image_rgb.shape[1], image_rgb.shape[0]))
+        mask = self.resize_binary_mask(mask, (image_rgb.shape[1], image_rgb.shape[0]))
 
         xmin, ymin, xmax, ymax = annotations[0], annotations[1], annotations[2], annotations[3]
-
         inv_final_mask = ~mask
-
         test_image = image_rgb.copy()
-
-
-
         test_image_arr = np.array(test_image)
-        black_image = np.ones(test_image_arr.shape)*0
-
         masked_out_image = np.copy(test_image_arr)
-        # print(inv_final_mask.shape)
-        # print(test_image_arr.shape)
         masked_out_image[inv_final_mask] = [0, 0, 0]
         masked_out_image = masked_out_image[ymin:ymax, xmin:xmax]
-        self.masked_image = masked_out_image
-
+        masked_image = masked_out_image
+        return masked_image 
     
     
     
         
     def find_left_upper_right_down(self, points):
-        # if self.points is None:
-        #     raise Exception('TypeError: Points list is None')
-        # points = self.points
-
         if not points:
             warnings.warn('>>> WARNING : list of points is empty. Please Check <<<')
             return None, None
         
         left_upper = [min(points, key=lambda point: point[0])[0], min(points, key=lambda point: point[1])[1]]
         right_down = [max(points, key=lambda point: point[0])[0], max(points, key=lambda point: point[1])[1]]
-        
-        # self.left = left_upper
-        # self.right = right_down
-        # self.annotations = [self.left[0], self.left[1], self.right[0], self.right[1]]
         annotations = [left_upper[0], left_upper[1], right_down[0], right_down[1]]
         return annotations
         
@@ -130,19 +113,4 @@ class maskImage:
             bounding_boxes.append(self.find_left_upper_right_down(entry))
 
         return bounding_boxes
-        
-
-    # def get_image_annotations(self, image, mask):
-    #     if type(image) == str:
-    #         self.image = cv2.imread(image)
-    #     self.image = image 
-        
-    #     boolean_mask = mask>0.5
-    #     boolean_mask = boolean_mask.astype(np.uint8)
-    #     self.mask = boolean_mask
-    #     self.maskProcessor()
-    #     self.find_left_upper_right_down()
-    #     return self.annotations
-
-        
         

@@ -11,7 +11,7 @@ class MotionDetection:
     def __init__(self, queueLen = 10, max_workers = 5):
         self.motionValue = 1000 
         self.motion = False 
-        self.frameQueue = deque(queueLen)
+        self.frameQueue = deque(maxlen=queueLen)
         self.executor = ThreadPoolExecutor(max_workers)
         self.threshold = 0.93
     
