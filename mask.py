@@ -57,34 +57,37 @@ class maskImage:
             raise Exception('>>> Mask not initiated <<<')
     
     
-    # def save_masked_image(self):
+    def save_masked_image(self, mask, image, annotations = None ):
         
-        # if self.image is None:
-        #     raise Exception('>>>>> Image not initiated <<<<<<')
-            
-            
-        # image_rgb = self.image
-        # mask = self.mask
+        if self.image is None:
+            raise Exception('>>>>> Image not initiated <<<<<<')
+
+        if annotations is None:
+            points_list, _ = self.maskProcessor(mask, tolerance=30)
+
+
+        image_rgb = self.image
+        mask = self.mask
         
-        # mask = self.resize_binary_mask(mask, (image_rgb.shape[1], image_rgb.shape[0]))
+        mask = self.resize_binary_mask(mask, (image_rgb.shape[1], image_rgb.shape[0]))
 
-        # xmin, ymin, xmax, ymax = annotations[0], annotations[1], annotations[2], annotations[3]
+        xmin, ymin, xmax, ymax = annotations[0], annotations[1], annotations[2], annotations[3]
 
-        # inv_final_mask = ~mask
+        inv_final_mask = ~mask
 
-        # test_image = image_rgb.copy()
+        test_image = image_rgb.copy()
 
 
 
-        # test_image_arr = np.array(test_image)
-        # black_image = np.ones(test_image_arr.shape)*0
+        test_image_arr = np.array(test_image)
+        black_image = np.ones(test_image_arr.shape)*0
 
-        # masked_out_image = np.copy(test_image_arr)
-        # # print(inv_final_mask.shape)
-        # # print(test_image_arr.shape)
-        # masked_out_image[inv_final_mask] = [0, 0, 0]
-        # masked_out_image = masked_out_image[ymin:ymax, xmin:xmax]
-        # self.masked_image = masked_out_image
+        masked_out_image = np.copy(test_image_arr)
+        # print(inv_final_mask.shape)
+        # print(test_image_arr.shape)
+        masked_out_image[inv_final_mask] = [0, 0, 0]
+        masked_out_image = masked_out_image[ymin:ymax, xmin:xmax]
+        self.masked_image = masked_out_image
 
     
     
