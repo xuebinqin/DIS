@@ -23,7 +23,7 @@
 
 # Updates !!!
 
-** (2024-Sept.-22)** [**Bohrium**](https://bohrium.dp.tech/) provides an free demo on their [**Bohrium Notebook**](https://bohrium.dp.tech/notebooks/51445486135). 
+** (2024-Sept.-22)** [**Bohrium**](https://bohrium.dp.tech/) provides an free DIS demo on [**Bohrium Notebook**](https://bohrium.dp.tech/notebooks/51445486135). 
 
 ** (2022-Aug.-17)** The optimized model for general use of our IS-Net is now released: ```isnet-general-use.pth``` (for general use, this is NOT DIS V2.0.) from [(Google Drive)](https://drive.google.com/file/d/1XHIzgTzY5BQHw140EDIgwIb53K659ENH/view?usp=sharing) or [(Baidu Pan 提取码:6jh2)](https://pan.baidu.com/s/111MqmwnUc8Z4Wsq2Pc4bhQ?pwd=6jh2), please feel free to try it with the newly created simple ```inference.py``` code on your own datasets.
 ![u2net-isnet-cmp](figures/u2net-isnet-cmp.png)
