@@ -12,9 +12,9 @@
 <br>
 
 ## This is the official repo for our newly formulated DIS task: 
-[**Project Page**](https://xuebinqin.github.io/dis/index.html), [**Arxiv**](https://arxiv.org/pdf/2203.03041.pdf), [**中文**](https://github.com/xuebinqin/xuebinqin.github.io/blob/main/ECCV2022_DIS_Chinese.pdf).
-
-<br> 
+[[**Project Page**]](https://xuebinqin.github.io/dis/index.html), [[**Arxiv**]](https://arxiv.org/pdf/2203.03041.pdf), [[**中文**]](https://github.com/xuebinqin/xuebinqin.github.io/blob/main/ECCV2022_DIS_Chinese.pdf).
+[![asd](https://replicate.com/arielreplicate/dichotomous_image_segmentation/badge)](https://replicate.com/arielreplicate/dichotomous_image_segmentation)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/doevent/dis-background-removal)
 
 # Currently, only a few sample images of our DIS V2.0 dataset are included in this repo. The complete DIS V2.0 dataset and model have NOT been released yet! (quick response to many emails regarding to the DIS V2.0.)
 
